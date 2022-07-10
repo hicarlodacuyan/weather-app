@@ -13,6 +13,7 @@ This project is created for the sole purpose of learning and part of the "The Od
 - ES6 Modules
 - SASS
 - Tailwind CSS
+- OpenWeatherMap API
 - ESLint & Prettier
 - Webpack
 - GitHub and git
