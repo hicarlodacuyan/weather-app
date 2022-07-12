@@ -1,10 +1,18 @@
 import './main.scss'
 
 const container = document.createElement('div')
-container.classList.add('flex', 'justify-center', 'items-center', 'm-20')
+container.classList.add(
+  'flex',
+  'justify-center',
+  'items-center',
+  'm-20',
+  'p-5',
+  'bg-slate-500',
+  'rounded-lg'
+)
 
 const h1 = document.createElement('h1')
-h1.classList.add('text-3xl', 'font-bold', 'text-gray-500')
+h1.classList.add('text-2xl', 'font-bold', 'text-gray-100')
 
 const img = document.createElement('img')
 
