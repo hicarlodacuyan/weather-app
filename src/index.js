@@ -1,38 +1,25 @@
 import './main.scss'
 
-const container = document.createElement('div')
-container.classList.add(
-  'flex',
-  'justify-center',
-  'items-center',
-  'm-20',
-  'p-5',
-  'bg-slate-500',
-  'rounded-lg'
-)
-
-const h1 = document.createElement('h1')
-h1.classList.add('text-2xl', 'font-bold', 'text-gray-100')
-
-const img = document.createElement('img')
+const weatherIcon = document.getElementById('weatherIcon')
+const weatherInfo = document.getElementById('weatherInfo')
+const weatherTemp = document.getElementById('weatherTemp')
+const weatherLocation = document.getElementById('weatherLocation')
 
 const findCurrentWeatherData = async loc => {
   try {
-    const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${loc}&APPID=e72cbe506351290ff39725a41bce3680`
+    const weatherResponse = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${loc}&units=metric&APPID=e72cbe506351290ff39725a41bce3680`
     )
-    const currentWeatherData = await response.json()
+    const currentWeatherData = await weatherResponse.json()
 
-    console.log(currentWeatherData.name)
-    h1.textContent = `Right now in ${currentWeatherData.name}, it's ${currentWeatherData.weather[0].description}`
-    img.src = `https://openweathermap.org/img/wn/${currentWeatherData.weather[0].icon}@2x.png`
+    console.log(currentWeatherData)
+    weatherLocation.textContent = `${currentWeatherData.name}`
+    weatherInfo.textContent = `${currentWeatherData.weather[0].description}`
+    weatherTemp.textContent = `${Math.round(currentWeatherData.main.temp)}`
+    weatherIcon.src = `https://openweathermap.org/img/wn/${currentWeatherData.weather[0].icon}@2x.png`
   } catch (err) {
     console.log(err)
   }
 }
 
-findCurrentWeatherData('manila')
-
-container.appendChild(h1)
-container.appendChild(img)
-document.getElementById('root').appendChild(container)
+findCurrentWeatherData('cainta')

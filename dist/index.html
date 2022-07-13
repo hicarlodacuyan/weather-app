@@ -1,13 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-</head>
-<body>
-    <div id="root"></div>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="h-screen w-screen bg-neutral-200">
+    <div id="root" class="h-full flex justify-center items-center">
+      <main class="flex flex-col gap-10 w-1/4">
+        <header class="flex justify-center">
+          <h1 class="text-2xl text-slate-600">
+            Right now in
+            <span
+              id="weatherLocation"
+              class="font-bold text-zinc-900 border-solid border-b-2 border-gray-400"
+              contenteditable
+              >London</span
+            >, <span id="weatherInfo">it's clear</span>.
+          </h1>
+        </header>
+
+        <section class="flex justify-between">
+          <div>
+            <img
+              id="weatherIcon"
+              class="h-32 w-32"
+              src="https://openweathermap.org/img/wn/10d@2x.png"
+              alt="weather icon"
+            />
+          </div>
+          <div class="flex flex-col justify-center items-center">
+            <h2 id="weatherTemp" class="text-7xl font-light">99</h2>
+            <p class="text-sm text-slate-600">69° / 100°</p>
+          </div>
+          <div class="flex flex-col justify-center items-center">
+            <p class="w-full text-sm text-slate-600">
+              <span class="text-2xl">8</span> mph
+            </p>
+            <p class="w-full text-sm text-slate-600">
+              <span class="text-2xl">0%</span>
+            </p>
+            <p class="w-full text-sm text-slate-600">
+              <span class="text-2xl">30%</span>
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
