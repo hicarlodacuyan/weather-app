@@ -15,14 +15,14 @@
             Right now in
             <span
               id="weatherLocation"
-              class="font-bold text-zinc-900 border-solid border-b-2 border-gray-400"
+              class="w-min font-bold text-zinc-900 border-solid border-b-2 border-gray-400"
               contenteditable
-              >London</span
-            >, <span id="weatherInfo">it's clear</span>.
+              >Manila</span
+            >, <span id="weatherInfo"></span>.
           </h1>
         </header>
 
-        <section class="flex justify-between">
+        <section class="flex">
           <div>
             <img
               id="weatherIcon"
@@ -31,20 +31,33 @@
               alt="weather icon"
             />
           </div>
-          <div class="flex flex-col justify-center items-center">
-            <h2 id="weatherTemp" class="text-7xl font-light">99</h2>
-            <p class="text-sm text-slate-600">69° / 100°</p>
+
+          <div class="flex flex-1 flex-col justify-center items-center">
+            <h2 id="weatherTemp" class="text-7xl font-light"></h2>
+            <p id="weatherMinMax" class="text-sm text-slate-600"></p>
           </div>
+
           <div class="flex flex-col justify-center items-center">
-            <p class="w-full text-sm text-slate-600">
-              <span class="text-2xl">8</span> mph
-            </p>
-            <p class="w-full text-sm text-slate-600">
-              <span class="text-2xl">0%</span>
-            </p>
-            <p class="w-full text-sm text-slate-600">
-              <span class="text-2xl">30%</span>
-            </p>
+            <div
+              class="text-sm text-slate-600 flex justify-center items-center"
+            >
+              <img
+                class="h-8 w-8"
+                src="https://raw.githubusercontent.com/erikflowers/weather-icons/bb80982bf1f43f2d57f9dd753e7413bf88beb9ed/svg/wi-windy.svg"
+                alt="wind icon"
+              />
+              <span id="windSpeed" class="text-2xl block"></span> mph
+            </div>
+            <div
+              class="text-sm text-slate-600 flex justify-center items-center"
+            >
+              <img
+                class="h-8 w-8"
+                src="https://raw.githubusercontent.com/erikflowers/weather-icons/bb80982bf1f43f2d57f9dd753e7413bf88beb9ed/svg/wi-humidity.svg"
+                alt="humidity icon"
+              />
+              <span id="humidity" class="text-2xl block"></span>
+            </div>
           </div>
         </section>
       </main>
